@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+TERRIBLY TINY TALES ASSIGNMENT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<Home> Component 
+Submit button 
+The start button which receives an onClick listener which gets a callback function getData()
 
-## Available Scripts
+getData()
+This is an asynchronous function which is responsible for three tasks:
+1.	Fetching the text- Simply fetching data using fetch API 
+2.	Finding the frequency of the words and – Firstly we are creating wordFreqMap which is an object to keep the track of the word and their frequency. Using forEach function we are traversing the words (an array created using the split() on text with a separator  “ ”  to split out the text in to array of words) and if the word is in the object it will increase the count and if not then it will create a new entry in the object with word as key and frequency as value.
+sortedFreq is an array of sorted words and the sliced down to Top 20 words with the most frequency. Here using the Object.key function on wordFreqMap we are accessing the key (i.e word) in the objects and sorting them according to their frequency using the sort function
+sort((a,b)=>wordFreqMap[b] – wordFreqMap[a]
+The sort() method is used with the callback function that takes two argument ‘a’ and ‘b’. the function returns a negative vale if ‘a’ should come before ‘b’ and positive value if ‘a’ should come after ‘b’ and ) for equality. We are sorting the array in the descending order of words’ frequency, so we subtract wordFreqMap[a] from wordFreqMap[b] to ensure that the higher frequency count are sorted before words lower frequency count. 
+graphData() – is an array of objects which contains top 20 most occurring words with their frequencies. Here we use map() to map over sortedFreq and for each word we create a new object with word and its frequency. To get the frequency we simply access the words freq using wordFreqMap[word] which returns the value of the key. 
+3.	Setting the flag that ensure the switching of the submit button and the histogram on click and sets the flag = true 
+4.	Setting the loadflag which here is used for switching the button text ‘Submit’ to ‘loading Animation. setTimeout is just added to show the loading functionality
 
-In the project directory, you can run:
 
-### `npm start`
+<Chart> Component
+Chart component contains a barchart and and export button to export the file 
+Histogram- a chart made using Recharts (A composable charting library built on React components). It contains different components provided by the rechart library
+1.	ResponsiveContainer- used to make the container responsive with 100% width of the screen and height of 400px
+2.	BarChart- The bar chart displays data using a number of bars, each representing a particular category. The component receives the data 
+3.	XAxis – used to define what to show on x axis
+4.	YAxis – defines the y-axis  
+5.	ToolTip- to show the value of var on hover
+6.	Bar – used to display data value and bars and define the color and shape
+CSVLink
+A component of react-csv library and is used to convert data to csv file. This data can be an array of arrays, an array of literal objects, or strings.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+data-context 
+A context which stores the data of the histogram to pass to the child component and which can also be used in the made for future use without prop drilling. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+libraries used 
+1.	react-csv 
+2.	react-router-dom
+3.	recharts
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
