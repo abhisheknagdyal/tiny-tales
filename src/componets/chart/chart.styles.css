@@ -1,0 +1,31 @@
+.graph-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #EAE7FA;
+}
+
+.head{
+    color: #695E93;
+}
+.char-container{
+    margin-left: -25px;
+}
+
+.download{
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 16px;
+    background: #695E93;
+    cursor: pointer;
+    color: white;
+}
+
+.download:hover{
+    filter: brightness(90%);
+}

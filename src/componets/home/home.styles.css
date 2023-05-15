@@ -1,0 +1,40 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #EAE7FA;
+    min-height: 100vh ;
+}
+
+.str-btn{
+    border: none;
+    outline: none;
+    background: #695E93;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 60px;
+    width: 100px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.str-btn:hover{
+    filter: brightness(90%);
+}
+
+
+.load-container{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: solid 8px #695E93;
+    border-top: 8px solid #F814B4; 
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
