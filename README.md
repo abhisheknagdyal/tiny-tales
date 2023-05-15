@@ -1,6 +1,7 @@
 TERRIBLY TINY TALES ASSIGNMENT
 
 Home Component 
+
 Submit button 
 The start button which receives an onClick listener which gets a callback function getData()
 
@@ -17,6 +18,7 @@ graphData() – is an array of objects which contains top 20 most occurring word
 
 
 Chart Component
+
 Chart component contains a barchart and and export button to export the file 
 Histogram- a chart made using Recharts (A composable charting library built on React components). It contains different components provided by the rechart library
 1.	ResponsiveContainer- used to make the container responsive with 100% width of the screen and height of 400px
